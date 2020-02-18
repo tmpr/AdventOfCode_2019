@@ -1,3 +1,4 @@
+"""File containing the Recipe class."""
 class Recipe:
     """
     Model of a recipe.

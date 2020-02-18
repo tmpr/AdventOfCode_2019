@@ -16,10 +16,14 @@ class Account:
 
     def parse_recipes(self, input_recipe: str):
         """
-        Generator function which has items in the form of
-        e.g. [["2 AB", "3 BC", "4 CA"], "1 FUEL"]
+        Returns a dictionary, where the keys are
+        the product names and the keys are the actual
+        Recipe objects.
         """
         recipe_dictionary = dict()
+        
+        # A raw recipe is not a designated object, 
+        # only a list of strings.
         individual_raw_recipes = input_recipe.splitlines()
         
         # * Single recipe looks like this: "2 AB, 3 BC, 4 CA => 1 FUEL"
@@ -37,7 +41,8 @@ class Account:
         
         return recipe_dictionary
 
-    def produce_recipe(self, product_name, how_often):
+    def produce_recipe(self, product_name: str, how_often: int):
+        """Produces Recipe specified amount of times."""
         # No recipe can produce ORE
         if product_name != "ORE": 
             recipe = self.recipes[product_name]

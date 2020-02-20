@@ -14,3 +14,5 @@ with a few testcases, I also got to write my first Python unittests, which I am 
 Python-modules I used so far to solve some of the problems:
 * [NumPy](https://numpy.org/): Great for working with matrices and computing stuff.
 * [NetworkX](https://networkx.github.io/): Tool for constructing Graphs and working with them.
+* [OpenCV](https://opencv.org/): I made a video with OpenCV!
+* [Matplotlib](https://matplotlib.org/): Visualization tool.

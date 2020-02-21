@@ -2,7 +2,6 @@
 
 import networkx as nx
 import numpy as np
-import os
 
 from functions import point_3d
 
@@ -164,13 +163,3 @@ class RecursiveMaze:
                 self.graph.add_edge(
                     current_point, point_3d(direction, current_point))
 
-
-def main():
-    with open(os.path.join("inputs", "my_input.in"), "r") as f:
-        example_input = f.read()
-    example_maze = RecursiveMaze(example_input, depth=50)
-    print(example_maze.shortest_path_length)
-
-
-if __name__ == "__main__":
-    main()

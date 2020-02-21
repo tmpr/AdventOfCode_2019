@@ -1,5 +1,5 @@
 """
-Soltuion to Day 8 of the Advent of Code 2019.
+Soltution to Day 8 of the Advent of Code 2019.
 Title: 'Space Image Format'
 URL: https://adventofcode.com/2019/day/08
 Author: tmpr

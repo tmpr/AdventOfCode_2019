@@ -1,6 +1,6 @@
 """
 Unittest to Day 20 of the Advent of Code 2019.
-Title: 'Space Stoicometry'
+Title: 'Donut Maze'
 URL: https://adventofcode.com/2019/day/20
 Author: tmpr
 Date: 21th of February

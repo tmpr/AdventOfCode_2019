@@ -108,10 +108,10 @@ class RecursiveBugField(BugField):
 
                 adj_bugs = 0
 
-                adj_bugs += self.alive_neighbors(coord, "right_of")
-                adj_bugs += self.alive_neighbors(coord, "left_of")
-                adj_bugs += self.alive_neighbors(coord, "below")
-                adj_bugs += self.alive_neighbors(coord, "above")
+                adj_bugs += self.alive_neighbors("right_of", coord)
+                adj_bugs += self.alive_neighbors("left_of", coord)
+                adj_bugs += self.alive_neighbors("below", coord)
+                adj_bugs += self.alive_neighbors("above", coord)
 
                 if self.state[coord] == ALIVE:
                     if adj_bugs == 1:
@@ -143,7 +143,7 @@ class RecursiveBugField(BugField):
             bugs_below = 0
         return np.count_nonzero(self.state == ALIVE) + bugs_below
 
-    def alive_neighbors(self, coordinate: tuple, direction: str):
+    def alive_neighbors(self, direction: str, coordinate: tuple):
         """
         Given some coordinate, returns its alive neighbors in some
         direction.

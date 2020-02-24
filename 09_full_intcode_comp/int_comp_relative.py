@@ -6,7 +6,6 @@ Author: tmpr
 Date: 17th of February
 """
 
-from itertools import product
 from array import array
 import numpy as np
 

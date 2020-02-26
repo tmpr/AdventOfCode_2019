@@ -2,7 +2,9 @@ from collections import deque
 import numpy as np
 from numba import jit
 
+
 class SpaceDeck:
+    """Model of a SpaceDeck, which can be shuffled."""
 
     def __init__(self, num_cards: int):
         self.num_cards = num_cards
@@ -34,11 +36,10 @@ class SpaceDeck:
                 # Deal with increment (int)
                 instruction_words[-1] = int(instruction_words[-1])
                 return [" ".join(instruction_words[:-1]), instruction_words[-1]]
-            except ValueError:  
+            except ValueError:
                 # Deal into new stack
-               return instruction
-            
-    
+                return instruction
+
     def _follow(self, instruction):
         """Follows some shuffling instruction."""
         if instruction[0] == "cut":
@@ -50,7 +51,6 @@ class SpaceDeck:
         else:
             raise ValueError("Encountered unknown instruction: ", instruction)
 
-    
     def _cut(self, number: int):
         """Takes some cut of the deck and puts it onto the other deck."""
         if number > 0:
@@ -70,5 +70,5 @@ class SpaceDeck:
         position = 0
         while self.ordering:
             new_ordering[position] = self.ordering.popleft()
-            position = (position + increment) % self.num_cards 
+            position = (position + increment) % self.num_cards
         self.ordering = deque(new_ordering)

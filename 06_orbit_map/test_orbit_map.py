@@ -11,24 +11,28 @@ import pytest
 
 from orbit_map import OrbitMap
 
-os.chdir(os.path.dirname(os.path.realpath(__file__)))
+if os.path.dirname(os.path.realpath(__file__)) == os.getcwd():
+    PATH = "testfiles"
+else:
+    PATH = os.path.join(os.path.dirname(os.path.realpath(__file__))
+                        , "testfiles")
 
 class TestOrbitMap:
 
     def test_small_example(self):
-        with open(os.path.join("testfiles", "small_map.txt"), "r") as f:
+        with open(os.path.join(PATH, "small_map.txt"), "r") as f:
             small_input = f.read()
         small_space_map = OrbitMap(small_input)
         assert small_space_map.count_orbits() == 42
     
     def test_small_path(self):
-        with open(os.path.join("testfiles", "small_path.txt"), "r") as f:
+        with open(os.path.join(PATH, "small_path.txt"), "r") as f:
             small_path_input = f.read()
         small_space_map = OrbitMap(small_path_input)
         assert small_space_map.find_shortest_path_length("YOU", "SAN") == 4
 
     def test_my_example(self):
-        with open(os.path.join("testfiles", "my_map.txt"), "r") as f:
+        with open(os.path.join(PATH, "my_map.txt"), "r") as f:
             my_input = f.read()
         my_space_map = OrbitMap(my_input)
         assert my_space_map.count_orbits() == 122782

@@ -13,14 +13,15 @@ from portal_maze import PortalMaze
 from recursive_maze import RecursiveMaze
 
 if os.path.dirname(os.path.realpath(__file__)) == os.getcwd():
-    RP = ""
+    PATH = "inputs"
 else:
-    RP = os.path.dirname(os.path.realpath(__file__))
+    PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)),
+                      "inputs")
 
 class PortalMazeTest:
 
     def test_example_1(self):
-        with open(os.path.join(RP, "inputs", "example_1.in"), "r") as f:
+        with open(os.path.join(PATH, "example_1.in"), "r") as f:
             example_input = f.read()
         example_maze = PortalMaze(example_input)
         recursive_maze = RecursiveMaze(example_input, depth=20)
@@ -29,7 +30,7 @@ class PortalMazeTest:
         assert recursive_maze.shortest_path_length == 26
 
     def test_example_2(self):
-        with open(os.path.join(RP, "inputs", "example_2.in"), "r") as f:
+        with open(os.path.join(PATH, "example_2.in"), "r") as f:
             example_input = f.read()
         example_maze = PortalMaze(example_input)
         recursive_maze = PortalMaze(example_input)
@@ -39,7 +40,7 @@ class PortalMazeTest:
         pytest.raises(Exception, recursive_maze.shortest_path_length)
 
     def test_recursive_example(self):
-        with open(os.path.join(RP, "inputs", "example_3.in"), "r") as f:
+        with open(os.path.join(PATH, "example_3.in"), "r") as f:
             example_input = f.read()
         recursive_maze = RecursiveMaze(example_input, depth=50)
         assert recursive_maze.shortest_path_length == 396

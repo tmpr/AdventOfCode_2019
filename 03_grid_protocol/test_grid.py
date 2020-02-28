@@ -13,21 +13,22 @@ import pytest
 from grid import Grid
 
 if os.path.dirname(os.path.realpath(__file__)) == os.getcwd():
-    RP = ""
+    PATH = "testfiles"
 else:
-    RP = os.path.dirname(os.path.realpath(__file__))
+    PATH = os.path.join(os.path.dirname(os.path.realpath(__file__))
+                        , "testfiles")
 
 class TestGrid:
 
     def test_example_1(self):
-        with open(os.path.join(RP, "testfiles", "example_1.in"), "r") as f:
+        with open(os.path.join(PATH, "example_1.in"), "r") as f:
             input_string = f.read()
         test_grid = Grid(input_string)
         assert test_grid.closest_intersec_dist("manhattan") == 159
         assert test_grid.closest_intersec_dist("path_length") == 610
 
     def test_example_2(self):
-        with open(os.path.join(RP, "testfiles", "example_2.in"), "r") as f:
+        with open(os.path.join(PATH, "example_2.in"), "r") as f:
             input_string = f.read()
         test_grid = Grid(input_string)
         assert test_grid.closest_intersec_dist("manhattan") == 135

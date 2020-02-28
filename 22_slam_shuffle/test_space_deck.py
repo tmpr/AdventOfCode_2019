@@ -5,9 +5,10 @@ from collections import deque
 from classes.space_deck import SpaceDeck
 
 if os.path.dirname(os.path.realpath(__file__)) == os.getcwd():
-    RP = ""
+    PATH = "testfiles"
 else:
-    RP = os.path.dirname(os.path.realpath(__file__))
+    PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)),
+                        "testfiles")
 
 class TestSpaceDeckBasics:
 
@@ -39,28 +40,28 @@ class TestSpaceDeckBasics:
 class TestSpaceDeckExamples:
 
     def test_example_1(self):
-        with open(os.path.join(RP, "testfiles", "example_1.in"), "r") as f:
+        with open(os.path.join(PATH, "example_1.in"), "r") as f:
             instruction_string = f.read()
         my_deck = SpaceDeck(num_cards=10)
         my_deck.shuffle(instruction_string)
         assert my_deck.ordering == deque([0, 3, 6, 9, 2, 5, 8, 1, 4, 7])
 
     def test_example_2(self):
-        with open(os.path.join(RP, "testfiles", "example_2.in"), "r") as f:
+        with open(os.path.join(PATH, "example_2.in"), "r") as f:
             instruction_string = f.read()
         my_deck = SpaceDeck(num_cards=10)
         my_deck.shuffle(instruction_string)
         assert my_deck.ordering == deque([3, 0, 7, 4, 1, 8, 5, 2, 9, 6])
 
     def test_example_3(self):
-        with open(os.path.join(RP, "testfiles", "example_3.in"), "r") as f:
+        with open(os.path.join(PATH, "example_3.in"), "r") as f:
             instruction_string = f.read()
         my_deck = SpaceDeck(num_cards=10)
         my_deck.shuffle(instruction_string)
         assert my_deck.ordering == deque([6, 3, 0, 7, 4, 1, 8, 5, 2, 9])
 
     def test_example_4(self):
-        with open(os.path.join(RP, "testfiles", "example_4.in"), "r") as f:
+        with open(os.path.join(PATH, "example_4.in"), "r") as f:
             instruction_string = f.read()
         my_deck = SpaceDeck(num_cards=10)
         my_deck.shuffle(instruction_string)

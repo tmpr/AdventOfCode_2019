@@ -12,36 +12,37 @@ import pytest
 from asteroid_belt import AsteroidBelt
 
 if os.path.dirname(os.path.realpath(__file__)) == os.getcwd():
-    RP = ""
+    PATH = "testfiles"
 else:
-    RP = os.path.dirname(os.path.realpath(__file__))
+    PATH = os.path.join(os.path.dirname(os.path.realpath(__file__))
+                        , "testfiles")
 
 
 class TestAsteroidBeltExamples:
 
     def test_small_example(self):
-        with open(os.path.join(RP, "testfiles", "small_example.txt"), "r") as f:
+        with open(os.path.join(PATH, "small_example.txt"), "r") as f:
             input_field = f.read()
         belt = AsteroidBelt(input_field)
         assert belt.best_asteroid.visible_asteroid_count == 8
         assert belt.best_asteroid.coordinates == (3, 4)
 
     def test_medium_example1(self):
-        with open(os.path.join(RP, "testfiles", "medium_example1.txt"), "r") as f:
+        with open(os.path.join(PATH, "medium_example1.txt"), "r") as f:
             input_field=f.read()
         belt=AsteroidBelt(input_field)
         assert belt.best_asteroid.visible_asteroid_count == 33
         assert belt.best_asteroid.coordinates == (5, 8)
 
     def test_medium_example2(self):
-        with open(os.path.join(RP, "testfiles", "medium_example2.txt"), "r") as f:
+        with open(os.path.join(PATH, "medium_example2.txt"), "r") as f:
             input_field=f.read()
         belt=AsteroidBelt(input_field)
         assert belt.best_asteroid.visible_asteroid_count == 35
         assert belt.best_asteroid.coordinates == (1, 2)
 
     def test_medium_example3(self):
-        with open(os.path.join(RP, "testfiles", "medium_example3.txt"), "r") as f:
+        with open(os.path.join(PATH, "medium_example3.txt"), "r") as f:
             input_field=f.read()
         belt=AsteroidBelt(input_field)
         assert belt.best_asteroid.visible_asteroid_count == 41
@@ -49,7 +50,7 @@ class TestAsteroidBeltExamples:
 
 
     def test_large_example(self):
-        with open(os.path.join(RP, "testfiles", "large_example.txt"), "r") as f:
+        with open(os.path.join(PATH, "large_example.txt"), "r") as f:
             input_field=f.read()
         belt=AsteroidBelt(input_field)
         assert belt.best_asteroid.visible_asteroid_count == 210

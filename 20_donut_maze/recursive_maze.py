@@ -43,8 +43,11 @@ class RecursiveMaze:
         start = tuple(np.argwhere(self.maze == "AA")[0])
         goal = tuple(np.argwhere(self.maze == "ZZ")[0])
 
-        self.shortest_path_length = nx.shortest_path_length(
-            self.graph, start, goal)
+        try:
+            self.shortest_path_length = nx.shortest_path_length(
+                self.graph, start, goal)
+        except nx.NetworkXNoPath:
+            self.shortest_path_length = None
 
     def _file_to_matrix(self, input_field: str, depth: int) -> np.char.array:
         """

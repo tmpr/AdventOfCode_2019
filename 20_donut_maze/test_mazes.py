@@ -8,6 +8,7 @@ Date: 21th of February
 
 import pytest
 import os
+import networkx as nx
 
 from portal_maze import PortalMaze
 from recursive_maze import RecursiveMaze
@@ -28,16 +29,15 @@ class TestPortalMaze:
 
         assert example_maze.shortest_path_length == 23
         assert recursive_maze.shortest_path_length == 26
-
+        
     def test_example_2(self):
         with open(os.path.join(PATH, "example_2.in"), "r") as f:
             example_input = f.read()
         example_maze = PortalMaze(example_input)
-        recursive_maze = PortalMaze(example_input)
+        recursive_maze = RecursiveMaze(example_input, depth=100)
 
         assert example_maze.shortest_path_length == 58
-        # There should be no path.
-        pytest.raises(Exception, recursive_maze.shortest_path_length)
+        assert recursive_maze.shortest_path_length == None
 
     def test_recursive_example(self):
         with open(os.path.join(PATH, "example_3.in"), "r") as f:

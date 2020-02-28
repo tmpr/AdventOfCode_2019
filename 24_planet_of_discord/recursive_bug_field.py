@@ -116,14 +116,14 @@ class RecursiveBugField(BugField):
                 if self.state[coord] == ALIVE:
                     if adj_bugs == 1:
                         if abs(self.depth) == self.max_recursion:
-                            raise Warning("Altered outermoust level.")
+                            raise Warning("Altered outermost level.")
                         next_state[coord] = ALIVE
                     else:
                         next_state[coord] = DEAD
                 else:
                     if adj_bugs in [1, 2]:
                         if abs(self.depth) == self.max_recursion:
-                            raise Warning("Altered outermoust level.")
+                            raise Warning("Altered outermost level.")
                         next_state[coord] = ALIVE
                     else:
                         next_state[coord] = DEAD

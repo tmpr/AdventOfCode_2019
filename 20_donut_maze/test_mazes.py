@@ -18,7 +18,7 @@ else:
     PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)),
                       "inputs")
 
-class PortalMazeTest:
+class TestPortalMaze:
 
     def test_example_1(self):
         with open(os.path.join(PATH, "example_1.in"), "r") as f:

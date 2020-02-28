@@ -1,0 +1,20 @@
+[
+  "test_card_tracker.py::TestCardTrackerBasics::test_deal_into_new_stack",
+  "test_card_tracker.py::TestCardTrackerBasics::test_cut_positive_card_out_of_cut",
+  "test_card_tracker.py::TestCardTrackerBasics::test_cut_positive_card_in_cut",
+  "test_card_tracker.py::TestCardTrackerBasics::test_cut_negative_card_out_of_cut",
+  "test_card_tracker.py::TestCardTrackerBasics::test_cut_negative_card_in_cut",
+  "test_card_tracker.py::TestCardTrackerBasics::test_deal_with_increment",
+  "test_card_tracker.py::TestCardTrackerExamples::test_example_1",
+  "test_card_tracker.py::TestCardTrackerExamples::test_example_2",
+  "test_card_tracker.py::TestCardTrackerExamples::test_example_3",
+  "test_card_tracker.py::TestCardTrackerExamples::test_example_4",
+  "test_space_deck.py::TestSpaceDeckBasics::test_deal_into_new_stack",
+  "test_space_deck.py::TestSpaceDeckBasics::test_cut_positive",
+  "test_space_deck.py::TestSpaceDeckBasics::test_cut_negative",
+  "test_space_deck.py::TestSpaceDeckBasics::test_deal_with_increment",
+  "test_space_deck.py::TestSpaceDeckExamples::test_example_1",
+  "test_space_deck.py::TestSpaceDeckExamples::test_example_2",
+  "test_space_deck.py::TestSpaceDeckExamples::test_example_3",
+  "test_space_deck.py::TestSpaceDeckExamples::test_example_4"
+]

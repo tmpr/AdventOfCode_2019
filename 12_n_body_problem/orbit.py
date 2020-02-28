@@ -2,8 +2,7 @@ import numpy as np
 from itertools import product
 
 from moon import Moon
-from utils import lowest_common_multiple
-
+from utils_nbp import lowest_common_multiple
 
 class Orbit:
     """

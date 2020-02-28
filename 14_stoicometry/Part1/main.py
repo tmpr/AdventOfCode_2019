@@ -8,7 +8,7 @@ Date: 16th of February
 import os
 from math import ceil
 
-from functions import compute_ore_cost
+from functions_stoic import compute_ore_cost
 
 def main():
     with open(os.path.join("example_files", "my_input.txt"), "r") as f:

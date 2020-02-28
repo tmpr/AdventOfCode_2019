@@ -3,7 +3,7 @@
 import networkx as nx
 import numpy as np
 
-from functions import point_2d
+from pm_functions import point_2d
 
 PATH = "."
 EMPTY = " "

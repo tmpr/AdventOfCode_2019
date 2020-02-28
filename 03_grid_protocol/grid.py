@@ -1,4 +1,9 @@
-"""File containing only the Grid-class."""
+"""File containing the Grid-class."""
+
+LEFT = "L"
+RIGHT = "R"
+UP = "U"
+DOWN = "D"
 
 class Grid:
     """Model of a grid with wires running through it."""
@@ -34,23 +39,23 @@ class Grid:
         direction = instruction[0]
         steps = int(instruction[1:])
 
-        if direction == "R":
+        if direction == RIGHT:
             return [(starting_point[0] + step, starting_point[1])
                     for step in range(1, steps + 1)]
-        elif direction == "L":
+        elif direction == LEFT:
             return [(starting_point[0] - step, starting_point[1])
                     for step in range(1, steps + 1)]
-        elif direction == "U":
+        elif direction == UP:
             return [(starting_point[0], starting_point[1] + step)
                     for step in range(1, steps + 1)]
-        elif direction == "D":
+        elif direction == DOWN:
             return [(starting_point[0], starting_point[1] - step)
                     for step in range(1, steps + 1)]
 
         else:
             raise ValueError("Input contains invalid instruction.")
 
-    def closest_intersection_distance(
+    def closest_intersec_dist(
             self,
             mode: str,
             wire_path1=None,
@@ -84,4 +89,5 @@ class Grid:
 
         clostest_intersection = min(
             distances, key=lambda coord: distances[coord])
+
         return distances[clostest_intersection]

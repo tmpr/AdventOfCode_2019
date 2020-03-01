@@ -1,6 +1,6 @@
 # AdventOfCode_2019
 
-As I would like to just start using Github  and sharing some of my code, 
+As I would like to just start using GitHub  and sharing some of my code, 
 I figured it might be a good starting point to publish my solutions 
 to the coding challenge "Advent of Code" of 2019.
 

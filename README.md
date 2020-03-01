@@ -6,7 +6,7 @@ to the coding challenge "Advent of Code" of 2019.
 
 I think most of the puzzles are highly interesting and really get you to solve problems. 
 I recommend them to everyone who is up for advancing their coding-game. 
-Find it [here](https://adventofcode.com/)
+Find it [here](https://adventofcode.com/).
 
 For me, it is/has been a great way of exploring different fields of computer science
 and working around with various Python-modules. Moreover, since all of the Problems come

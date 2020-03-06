@@ -85,7 +85,7 @@ class RecursiveBugField(BugField):
         return total_bugs
 
     def number_of_bugs(self):
-        """Returns number of bugs of single bugfield."""
+        """Returns number of bugs of single bugfield and all below."""
         if self.sub_field:
             bugs_below = self.sub_field.number_of_bugs()
         else:
